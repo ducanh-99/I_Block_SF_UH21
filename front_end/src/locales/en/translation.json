@@ -5,7 +5,7 @@
   "SomethingWentWrong": "Something went wrong, please try again later",
   "Error": "Error",
   "Logout": "Logout",
-  "WelcomeText": "Welcome to Teko Admin Boilerplate",
+  "WelcomeText": "Welcome to",
   "Home": "Home",
   "TotalRecords": "Total Records",
   "Brands": "Brands",
@@ -19,5 +19,6 @@
   "EnterName": "Enter name",
   "SelectStatus": "Select status",
   "Search": "Search",
-  "SwitchTheme": "Switch theme"
+  "SwitchTheme": "Switch theme",
+  "Contract": "Contract"
 }

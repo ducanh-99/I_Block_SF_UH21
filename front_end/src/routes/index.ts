@@ -7,6 +7,7 @@ import {
 } from 'constants/index';
 import { t } from 'helpers/i18n';
 import { permission } from 'helpers/common';
+import Contract from 'containers/Contract';
 
 const { CATALOG } = appConstants;
 const { BRAND } = resourceConstants;
@@ -28,6 +29,13 @@ const routes = [
     path: '/',
     name: t('Home'),
     component: Home,
+    icon: HomeOutlined,
+  },
+  {
+    exact: true,
+    path: '/contract',
+    name: t('Contract'),
+    component: Contract,
     icon: HomeOutlined,
   },
   // This is a parent menu which has children (sub-menu) and requires catalog:brand:X permission to display
