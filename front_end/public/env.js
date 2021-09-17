@@ -7,8 +7,8 @@
 
 window.config = {
   iam: {
-    clientId: 'db4847f2371c4ebca2d9bb6f0b38b457', // Change to your client ID
-    oauthDomain: 'https://oauth.develop.tekoapis.net',
+    clientId: 'Btpqj8LTR0avbWABn0nudDLBEb411h7o', // Change to your client ID
+    oauthDomain: 'https://oauth.dgl-dev.tekoapis.net',
   },
   tracker: {
     appId: '',
