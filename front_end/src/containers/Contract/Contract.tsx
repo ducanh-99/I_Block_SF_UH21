@@ -1,66 +1,102 @@
 import React from 'react';
-import { Steps, Button, message } from 'antd';
+import { Button, Table, Tag } from 'antd';
 import AppContainer from 'containers/AppLayout/AppContainer';
+// import { brandHooks } from 'hooks';
 
-const { Step } = Steps;
+// const { useBrandData } = brandHooks;
 
-const steps = [
+const data = [
   {
-    title: 'First',
-    content: 'First-content',
+    key: '1',
+    name: 'Full-time employment contract - Adam Whitemans',
+    position: 'Accouting',
+    status: ['Editing'],
   },
   {
-    title: 'Second',
-    content: 'Second-content',
+    key: '1',
+    name: 'Intern employment contract - Nell McCoy',
+    position: 'Software engineer',
+    status: ['Completed'],
   },
   {
-    title: 'Last',
-    content: 'Last-content',
+    key: '1',
+    name: 'Full-time employment contract - Adam Whitemans',
+    position: 'Security',
+    status: ['Sent to sign'],
+  },
+  {
+    key: '1',
+    name: 'Independent contractor - Ann Huff',
+    position: 'Accouting',
+    status: ['Editing'],
+  },
+  {
+    key: '1',
+    name: 'Full-time employment contract - Adam Whitemans',
+    position: 'Accouting',
+    status: ['Editing'],
+  },
+  {
+    key: '1',
+    name: 'Intern employment contract - Nell McCoy',
+    position: 'Software engineer',
+    status: ['Completed'],
+  },
+  {
+    key: '1',
+    name: 'Full-time employment contract - Adam Whitemans',
+    position: 'Security',
+    status: ['Sent to sign'],
+  },
+  {
+    key: '1',
+    name: 'Independent contractor - Ann Huff',
+    position: 'Accouting',
+    status: ['Editing'],
+  },
+];
+
+const columns = [
+  {
+    title: 'Contract',
+    dataIndex: 'name',
+  },
+  {
+    title: 'Position',
+    dataIndex: 'position',
+  },
+  {
+    title: 'Status',
+    dataIndex: 'status',
+    render: (_: string[]) =>
+      _.map(tag => {
+        let color = tag.length > 8 ? 'geekblue' : 'volcano';
+        if (tag === 'Completed') {
+          color = 'green';
+        }
+        return (
+          <Tag color={color} key={tag}>
+            {tag.toUpperCase()}
+          </Tag>
+        );
+      }),
   },
 ];
 
 const Contract = () => {
-  const [current, setCurrent] = React.useState(0);
-
-  const next = () => {
-    setCurrent(current + 1);
-  };
-
-  const prev = () => {
-    setCurrent(current - 1);
-  };
-
   return (
-    <>
-      <AppContainer title="Create Contract">
-        <Steps current={current}>
-          {steps.map(item => (
-            <Step key={item.title} title={item.title} />
-          ))}
-        </Steps>
-        <div className="steps-content">{steps[current].content}</div>
-        <div className="steps-action">
-          {current < steps.length - 1 && (
-            <Button type="primary" onClick={() => next()}>
-              Next
-            </Button>
-          )}
-          {current === steps.length - 1 && (
-            <Button
-              type="primary"
-              onClick={() => message.success('Processing complete!')}
-            >
-              Done
-            </Button>
-          )}
-          {current > 0 && (
-            <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
-              Previous
-            </Button>
-          )}
-        </div>
-      </AppContainer>
-    </>
+    <AppContainer title="List of Contract">
+      <Button
+        type="primary"
+        style={{ float: 'right' }}
+        href="https://powerforms-d.docusign.net/e3558b87-5195-4d4e-be19-4bae4e0d5836?env=demo&acct=7bfe8da9-2a9b-4f67-a5dd-216568082a84&accountId=7bfe8da9-2a9b-4f67-a5dd-216568082a84"
+      >
+        Create Contract
+      </Button>
+      <br />
+      <br />
+      <Table dataSource={data} columns={columns} />
+    </AppContainer>
   );
 };
 
