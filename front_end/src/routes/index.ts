@@ -1,5 +1,10 @@
 import { lazy } from 'react';
-import { HomeOutlined, AppstoreOutlined } from '@ant-design/icons';
+import {
+  HomeOutlined,
+  AppstoreOutlined,
+  CopyOutlined,
+  HighlightOutlined,
+} from '@ant-design/icons';
 import {
   appConstants,
   resourceConstants,
@@ -8,6 +13,7 @@ import {
 import { t } from 'helpers/i18n';
 import { permission } from 'helpers/common';
 import Contract from 'containers/Contract';
+import TypeContract from 'containers/TypeContract';
 
 const { CATALOG } = appConstants;
 const { BRAND } = resourceConstants;
@@ -36,7 +42,14 @@ const routes = [
     path: '/contract',
     name: t('Contract'),
     component: Contract,
-    icon: HomeOutlined,
+    icon: CopyOutlined,
+  },
+  {
+    exact: true,
+    path: '/type-contract',
+    name: t('Type Contract'),
+    component: TypeContract,
+    icon: HighlightOutlined,
   },
   // This is a parent menu which has children (sub-menu) and requires catalog:brand:X permission to display
   // X maybe read/create/update/delete...
