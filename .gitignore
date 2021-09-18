@@ -93,3 +93,9 @@ ipython_config.py
 #   having no cross-platform support, pipenv may install dependencies that don't work, or n
 env 
 venv
+.gradle
+*.class
+.settings
+.project
+.classpath
+
