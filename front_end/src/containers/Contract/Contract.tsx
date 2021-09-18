@@ -54,6 +54,24 @@ const data = [
     position: 'Accouting',
     status: ['Editing'],
   },
+  {
+    key: '1',
+    name: 'Intern employment contract - Nell McCoy',
+    position: 'Software engineer',
+    status: ['Completed'],
+  },
+  {
+    key: '1',
+    name: 'Full-time employment contract - Adam Whitemans',
+    position: 'Security',
+    status: ['Sent to sign'],
+  },
+  {
+    key: '1',
+    name: 'Independent contractor - Ann Huff',
+    position: 'Accouting',
+    status: ['Editing'],
+  },
 ];
 
 const columns = [
