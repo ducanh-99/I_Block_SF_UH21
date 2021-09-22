@@ -40,6 +40,17 @@ class Settings(BaseSettings):
         GOOGLE_APPLICATION_CREDENTIALS_CONTENT = json.loads(os.getenv('GOOGLE_APPLICATION_CREDENTIALS_CONTENT', ''))
 
     LIST_EMAIL_TRUST = os.getenv('LIST_EMAIL_TRUST', '')
+    FASTAPI_SIMPLE_SECURITY_SECRET = os.getenv('FASTAPI_SIMPLE_SECURITY_SECRET')
+    
+    MAIL_USERNAME = os.getenv('MAIL_USERNAME')
+    MAIL_PASSWORD = os.getenv('MAIL_PASSWORD')
+    MAIL_FROM = os.getenv('MAIL_FROM')
+    MAIL_PORT = int(os.getenv('MAIL_PORT'))
+    MAIL_SERVER = os.getenv('MAIL_SERVER')
+    MAIL_FROM_NAME = os.getenv('MAIL_FROM_NAME')
+    MAIL_TLS=True,
+    MAIL_SSL=False,
+    USE_CREDENTIALS=True,
 
 
 settings = Settings()
