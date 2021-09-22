@@ -138,4 +138,5 @@ venv
 .project
 .classpath
 
-env.js.env
+env.js
+.env
