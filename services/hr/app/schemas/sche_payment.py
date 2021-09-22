@@ -1,11 +1,12 @@
-from typing import List
-from pydantic import BaseModel
+from typing import List, Optional
+from pydantic import BaseModel, EmailStr
 from datetime import date
 
 class Staff(BaseModel):
     name: str
     payment_method: str
     account_number: str
+    email: Optional[EmailStr]
 
 class PaymentRequest(BaseModel):
     staff: List[Staff]
